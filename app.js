@@ -20,48 +20,64 @@ function drawSongs(songList){
 
             '<li>' + 
               '<div class="row well">' + 
-                '<div class="col-xs-12 col-sm-4 col-md-2">' +
-                  '<img src="' + song.albumArt + '" alt="album art for ' + song.title + ' by ' + song.artist + '" />' +
+                '<div class="col-xs-12 col-sm-3 col-md-2">' +
+                  '<img class="album-art" src="' + song.albumArt + '" alt="album art for ' + song.title + ' by ' + song.artist + '" />' +
                 '</div>' +                  
-                '<div class="col-xs-12 col-sm-8 col-md-3">' + 
-                  '<p><span class="metadata-category">Track:</span> ' + song.title + '</p>' + 
+                '<div class="col-xs-12 col-sm-6 col-md-3">' + 
+                  '<p class="track-title"><span class="metadata-category">Track:</span> <strong>' + song.title + '</strong></p>' + 
                   '<p><span class="metadata-category">Artist:</span> ' + song.artist + '</p>' + 
                   '<p><span class="metadata-category">Album:</span> ' + song.collection + '</p>' + 
                 '</div>' + 
-                '<div class="col-xs-12 col-sm-4 col-md-5">' + 
-                  '<a href="' + song.preview + '" target="_self"><i class="glyphicon glyphicon-play"></i> Preview</a>' + 
-                '</div>' + 
-                '<div class="col-xs-12 col-sm-8 col-md-2">' + 
+                '<div class="col-xs-12 col-sm-3 col-md-2 col-md-push-5">' + 
                   '<p><span class="metadata-category">Price:</span> $' + song.songPrice + '</p>' + 
                   '<p><span class="metadata-category">Full Album:</span> $' + song.albumPrice + '</p>' + 
+                '</div>' + 
+                '<div class="col-xs-12 col-sm-12 col-md-5 col-md-pull-2">' + 
+                  '<audio controls class="previewer" preload="none">' + 
+                    '<source src="' + song.preview + '" type="audio/mp4">' +  
+                  '</audio>' + 
                 '</div>' + 
               '</div>' + 
             '</li>';
 
-
-/*
-        document.getElementById('results-list').innerHTML += 
-        '<li><img src="' + song.albumArt + '" alt="album art for ' + song.title + ' by ' + song.artist + '" />' + '</br>' 
-        + 'Artist: ' + song.artist + '</br>' + 'Title: ' + song.title + '</br>' + 'Album: ' + song.collection + '</br>' 
-        + 'Song Price: $' + song.price + '</br>' 
-        + '<a href="' + song.preview + '" target="_parent"><i class="glyphicon glyphicon-play"></i> Preview</a>' + '</br>';
-*/
     }
 
 }
 
 
 
+/* Previous code for preventing multiple audio tracks from playing simultaneously -- 
+-- almost worked but still buggy -- leaving it here so I can dissect it another day -- 
 
-/*  SONG OBJECT STRUCTURE
+var playing;
+var currentSongElem;
+document.addEventListener('play', function(event) {
+  if (playing) {
+    currentSongElem.pause();
+  }
+  currentSongElem = event.target;
+  currentSongElem.play();
 
-songList = [{
-  title: 'string - song title',
-  albumArt: 'string - url for song album cover art',
-  artist: 'string - artistName',
-  collection: 'string - album title',
-  price: 'number - price of song',
-  preview: 'string - url will play the song'
-}]
+  currentSongElem.addEventListener('playing', function() {
+    playing = true;
+  })
+  currentSongElem.addEventListener('pause', function() {
+    playing = false;
+  })
+}, true)
 
 */
+
+
+document.addEventListener('play', function(event) {
+   var players = document.getElementsByClassName('previewer');
+   for(var i = 0; i < players.length; i++) {
+     var currentPlayer = players[i];
+       if(currentPlayer != event.target) {
+           currentPlayer.pause();
+       }
+   }
+}, true);
+
+
+

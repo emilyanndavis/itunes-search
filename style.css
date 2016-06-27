@@ -1,16 +1,4 @@
-.album-art {
-    width: 60px;
-    height: 60px;
-    border: 1px solid black;
-}
-
-.btn {
-    margin: 20px auto 30px;
-}
-
-.jumbotron {
-    background-color: transparent;
-}
+/* BACKGROUND */
 
 body {
     background-color: #aef;
@@ -20,7 +8,45 @@ body {
     background-image: -webkit-radial-gradient(#fff, #8bc);
 }
 
+
+
+/* GENERAL TEXT STYLES */
+
+h1, h3, p {
+    font-family: Hind Guntur, Helvetica, sans-serif;
+    font-weight: 300;
+}
+
+strong {
+    font-weight: 600;
+}
+
+
+
+/* HEADER AND FORM STYLES */
+
+.jumbotron {
+    background-color: transparent;
+}
+
+.btn {
+    margin: 20px auto 30px;
+}
+
+
+
+/* RESULTS STYLES */
+
+.results-header {
+    margin-bottom: 30px;
+}
+
+.album-art {
+    padding-bottom: 10px;
+}
+
 li p {
+    font-size: 16px;
     margin-bottom: 2px;
 }
 
@@ -28,6 +54,13 @@ li p {
     color: #777;
 }
 
-.results-header {
-    margin-bottom: 30px;
+.track-title {
+    font-size: 18px;
 }
+
+.previewer {
+    width: 100%;
+    background-color: #8bc;
+    color: #8bc;
+}
+
