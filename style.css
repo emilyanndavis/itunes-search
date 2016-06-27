@@ -1,0 +1,33 @@
+.album-art {
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+}
+
+.btn {
+    margin: 20px auto 30px;
+}
+
+.jumbotron {
+    background-color: transparent;
+}
+
+body {
+    background-color: #aef;
+    background-image: radial-gradient(#fff, #8bc);
+    background-image: -o-radial-gradient(#fff, #8bc);
+    background-image: -moz-radial-gradient(#fff, #8bc);
+    background-image: -webkit-radial-gradient(#fff, #8bc);
+}
+
+li p {
+    margin-bottom: 2px;
+}
+
+.metadata-category {
+    color: #777;
+}
+
+.results-header {
+    margin-bottom: 30px;
+}

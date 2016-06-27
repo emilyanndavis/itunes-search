@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>yo dawg i heard you like itunes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="itunes-service.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+
+      <!-- HEADER -->
+
+      <div class="jumbotron">
+        <h1 class="text-center">music <small>on teh interwebz</small></h1>
+      </div>
+
+      <!-- SEARCH FORM -->
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+          <form class="text-center">
+          <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
+            <div class="form-group">
+              <input type="text" class="form-control" id="artist" placeholder="Artist Name"/>
+              <button type="button" class="btn btn-primary" id="get-music-button" onclick="getMusic()">Get Music</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- OUTPUT SECTION -->
+      <div class="row">
+        <div class="output col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+          <h3 id="results-header" class="results-header"></h3>
+          <ul id="results-list" class="list-unstyled">
+
+          <!-- SAMPLE OUTPUT FOR TESTING STRUCTURE/STYLING -------     
+            <li>
+              <div class="row">
+                <div class="col-xs-8 col-sm-2">
+                  <p class="album-art">[Album Art]</p>
+                </div>                  
+                <div class="col-xs-4 col-sm-3">
+                  <p>Title: [title]</p>
+                  <p>Artist: [artist]</p>
+                  <p>Album: [album]</p>
+                </div>
+                <div class="col-xs-8 col-sm-5">
+                  <p>[Preview Interface]</p>
+                </div>
+                <div class="col-xs-4 col-sm-2">
+                  <p>Song Price: [price]</p>
+                </div>
+              </div>
+            </li>
+          ----- END SAMPLE OUTPUT ------------------ -->
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>
